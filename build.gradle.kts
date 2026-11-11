@@ -20,4 +20,5 @@ dependencies {
     // SQLite JDBC Driver & Dialect for Spring JDBC
     implementation("org.xerial:sqlite-jdbc:3.45.2.0")
     implementation("org.hibernate.orm:hibernate-community-dialects")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 }

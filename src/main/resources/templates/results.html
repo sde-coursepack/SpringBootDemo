@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Poll Results</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; }
+        .progress-bar-container { background: #eee; border-radius: 4px; width: 300px; height: 20px; display: inline-block; vertical-align: middle; }
+        .progress-bar { background: #007bff; height: 100%; border-radius: 4px; }
+        .result-row { margin: 15px 0; }
+    </style>
+</head>
+<body>
+<h1 th:text="${results.questionText}">Question Text</h1>
+<p>Total Votes: <strong th:text="${results.totalVotes}">0</strong></p>
+
+<div th:each="item : ${results.results}" class="result-row">
+    <div th:text="${item.choiceText}">Choice</div>
+    <div class="progress-bar-container">
+        <div class="progress-bar" th:style="'width:' + ${item.percentage} + '%'"></div>
+    </div>
+    <span th:text="${item.votes} + ' votes (' + ${item.percentage} + '%)'"></span>
+</div>
+
+<br>
+<a href="/">Back to Home</a>
+</body>
+</html>

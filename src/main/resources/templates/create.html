@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Create Poll</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        textarea, input[type="text"] { width: 100%; max-width: 400px; padding: 8px; margin-top: 5px; }
+        button { margin-top: 15px; padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+<h1>Create a New Poll</h1>
+<form action="/create" method="post">
+    <div>
+        <label for="text">Question:</label>
+        <input type="text" id="text" name="text" required placeholder="e.g. What is your favorite color?">
+    </div>
+    <div>
+        <label for="choicesRaw">Choices (one per line):</label>
+        <textarea id="choicesRaw" name="choicesRaw" rows="5" required placeholder="Red
+Blue
+Green"></textarea>
+    </div>
+    <button type="submit">Submit Question</button>
+</form>
+<br>
+<a href="/">Back to Home</a>
+</body>
+</html>
